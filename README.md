@@ -8,9 +8,10 @@ READ ME
 
 ### Part I: Import files
 
-* use 'read.table' to read text files from "UCI HAR Dataset" directories
-* import library using 'library'
+* use '<read.table>' to read text files from "UCI HAR Dataset" directories
+* import library using '<library>' command. For this script we need '<reshape2>' package.
 
+<pre><code>
 library(reshape2)
 features <- read.table("~/UCI HAR Dataset/features.txt")
 act.labels <- read.table("~/UCI HAR Dataset/activity_labels.txt")
@@ -20,6 +21,7 @@ y.train <- read.table("~/UCI HAR Dataset/train/y_train.txt")
 test <- read.table("~/UCI HAR Dataset/test/X_test.txt")
 subj.test <- read.table("~/UCI HAR Dataset/test/subject_test.txt")
 y.test <- read.table("~/UCI HAR Dataset/test/y_test.txt")
+</code></pre>
 
 ### Part II: combine Train and Test datasets
 
