@@ -688,10 +688,10 @@ In order to get the tidy data set, these processes are done to the input.
 3. Assign Feature labels as the column names of data sets for the Feature Data.
 4. Assign appropriate the column names of data sets for Subjects and Activities Data.
 5. Extract the columns based on column names which contain mean() and std() elements from Feature Data. 
-6. Rename columns names into appropriately labels for Subjects, Activities, and Feature Data.
+6. Rename variable names into appropriately named labels (no character '-' and '()' in the names).
 7. Combine Subjects, Activities, and Feature Data part together
 8. Reshape the combined data into new independent tidy data set with the average of each variable for each activity and each subject.
-9. Rename columns names of tidy dataset as they reflects average values for each activity and each subject.
+9. Rename columns names of tidy dataset as they reflects average values for each activity and each subject with "average" prefix.
 10. Export the tidy data set into a tab delimited text file in working directory.
 
 ### Variables & Summary
