@@ -83,7 +83,7 @@ colnames(data) <- gsub("-", ".", colnames(data))
 colnames(data) <- gsub("\\(|\\)", "", colnames(data))
 ```
 
-## Part VI: Combine all data together including Subjects, Activities, and Feature Data part.
+## Part VII: Combine all data together including Subjects, Activities, and Feature Data part.
 
 * we can observe the data in Subjects, Activities, and Feature Data have the same amount of observations.
 * so we combind those data sets using `cbind` to connect by columns.
@@ -92,7 +92,7 @@ colnames(data) <- gsub("\\(|\\)", "", colnames(data))
 data <- cbind(subj, act, data)
 ```
 
-## Part VI: Reshape the combined data into new independent tidy data set with the average of each variable for each activity and each subject.
+## Part VIII: Reshape the combined data into new independent tidy aggregated data set.
 
 * We would like our tidy data to aggregate the average of each variable for each activity and each subject.
 * use `melt` command from `reshape2` package to melt the data. ID variables are `subject` and `activity.names` as we want to focus on per our objective. The measurement variables are the feature data (rest of the dataframe) as we want to aggregate the average per our objective.
@@ -103,7 +103,7 @@ meltData <- melt(data, id.vars = c(1,3), measure.vars = c(4:length(data)))
 tidyData <- dcast(meltData, subject + activity.names ~ variable, mean)
 ```
 
-## Part VII: Rename columns names of tidy dataset.
+## Part IX: Rename columns names of tidy dataset.
 
 * As the tidy data set reflects average values for each activity and each subject, we should rename the variable with "average" prefix.
 * use `paste` to add the word "average" into the feature data column names with separated by "." and parse them onto tidy data set column names using `colnames` command (leave the `subject` and `activity.names` variable intact).
@@ -112,7 +112,7 @@ tidyData <- dcast(meltData, subject + activity.names ~ variable, mean)
 colnames(tidyData) <- c(colnames(tidyData[,(1:2)]), paste("average", colnames(tidyData[,-(1:2)]), sep = "."))
 ```
 
-### Part VII: Export the tidy data set into a tab delimited text file in working directory.
+## Part X: Export the tidy data set into a tab delimited text file in working directory.
 
 * use `write.table` to export tidy data into text file in working directory. Use `sep = "\t"` to use tab as delimiter. As we don't have particular row names set `row.names = FALSE`.
 
