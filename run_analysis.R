@@ -43,7 +43,7 @@ meltData <- melt(data, id.vars = c(1,3), measure.vars = c(4:length(data)))
 tidyData <- dcast(meltData, subject + activity.names ~ variable, mean)
 
 ## rename columns names of tidy dataset as they reflects average value for each
-## activity and each subject
+## activity and each subject with "average" prefix
 colnames(tidyData) <- c(colnames(tidyData[,(1:2)]), paste("average", colnames(tidyData[,-(1:2)]), sep = "."))
 
 ## export the tidy data into a tab delimited text file in working directory
