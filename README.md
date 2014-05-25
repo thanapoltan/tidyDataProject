@@ -31,7 +31,7 @@ act.num <- rbind(y.train, y.test)
 
 ## Part III: Label activity numbers into descriptive activity names
 
-* use the `match` command to look up activity numbers data (dummy variable V1) on the activity labels data (from activity_labels.txt). This will return index data of label data that match with order of the experiment activity numbers data.
+* use the `match` command to look up activity numbers data (dummy variable V1) on the activity labels data (from `activity_labels.txt`). This will return index data of label data that match with order of the experiment activity numbers data.
 * use the obtained index to project activity labels upon the experiment data order.
 
 ```
@@ -41,7 +41,7 @@ act <- act.labels[match(act.num$V1, act.labels$V1),]
 ## Part IV: Assign column names for subject data, activity data, and feature data.
 
 * use `colnames` to set column names of each datasets.
-* For Feature data, we can parse column names from character vector obtained from features.txt.
+* For Feature data, we can parse column names from character vector obtained from `features.txt`.
 * For Subject and Activity data, we set up names called "subject", "activity.num", "activity.names" respectively.
 
 ```
@@ -114,7 +114,7 @@ colnames(tidyData) <- c(colnames(tidyData[,(1:2)]), paste("average", colnames(ti
 
 ### Part VII: Export the tidy data set into a tab delimited text file in working directory.
 
-* use `write.table` to export tidy data into text file in working directory. Use `sep` = `"\t"` to use tab as delimiter. As we don't have particular row names set `row.names` = `FALSE`.
+* use `write.table` to export tidy data into text file in working directory. Use `sep = "\t"` to use tab as delimiter. As we don't have particular row names set `row.names = FALSE`.
 
 ```
 write.table(tidyData, "~/tidyData.txt", sep="\t", row.names = FALSE)
