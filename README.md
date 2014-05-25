@@ -11,25 +11,20 @@ READ ME
 * use `read.table` to read text files from "UCI HAR Dataset" directories
 * import library using `library` command. For this script we need '<reshape2>' package.
 
-library(reshape2)</br>
-features <- read.table("~/UCI HAR Dataset/features.txt")</br>
-act.labels <- read.table("~/UCI HAR Dataset/activity_labels.txt")</br>
-train <- read.table("~/UCI HAR Dataset/train/X_train.txt")</br>
-subj.train <- read.table("~/UCI HAR Dataset/train/subject_train.txt")</br>
-y.train <- read.table("~/UCI HAR Dataset/train/y_train.txt")</br>
-test <- read.table("~/UCI HAR Dataset/test/X_test.txt")</br>
-subj.test <- read.table("~/UCI HAR Dataset/test/subject_test.txt")</br>
-y.test <- read.table("~/UCI HAR Dataset/test/y_test.txt")</br>
-
 ### Part II: combine Train and Test datasets
 
-## combine train and test datasets for each parts
-data <- rbind(train, test)
-subj <- rbind(subj.train, subj.test)
-act.num <- rbind(y.train, y.test)
+* we can observe the data in Train and Test sets are in pair, including subject data, activity data, and feature data.
+* so we combind those data sets using `rbind` to connect by rows.
 
+### Part III: Label activity numbers into descriptive activity names
+
+* use the `match` command to look up activity numbers data (dummy variable V1) on the activity labels data (dummy variable V1). This will return index data of label data that match with order of the experiment activity numbers data.
+* use the obtained index to project activity labels upon the experiment data order.
 ## recode activity numbers into descriptive activity names
+
+```
 act <- act.labels[match(act.num$V1, act.labels$V1),]
+```
 
 ## assign column names for each parts
 colnames(data) <- features[,2]

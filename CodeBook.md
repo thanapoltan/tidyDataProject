@@ -700,10 +700,8 @@ The variables in the tidy data set are summarized into the average of each input
 
 Below are the complete list of variables based on the information above:
 
-<pre>subject<br/>
-..* the subject who performed the activity (30 volunteers).<br/>
-activity.names<br/>
-..* six activities performed (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING).<br/>
+<pre>subject : the subject who performed the activity (30 volunteers).<br/>
+activity.names : six activities performed (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING).<br/>
 average.tBodyAcc.mean.X<br/>
 average.tBodyAcc.mean.Y<br/>
 average.tBodyAcc.mean.Z<br/>
