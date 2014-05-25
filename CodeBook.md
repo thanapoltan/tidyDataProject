@@ -115,7 +115,7 @@ tBodyGyroJerkMean<br/>
 
 Below are the complete list of variables based on the information above:
 
-tBodyAcc-mean()-X<br/>
+<pre>tBodyAcc-mean()-X<br/>
 tBodyAcc-mean()-Y<br/>
 tBodyAcc-mean()-Z<br/>
 tBodyAcc-std()-X<br/>
@@ -675,7 +675,7 @@ angle(tBodyGyroMean,gravityMean)<br/>
 angle(tBodyGyroJerkMean,gravityMean)<br/>
 angle(X,gravityMean)<br/>
 angle(Y,gravityMean)<br/>
-angle(Z,gravityMean)<br/>
+angle(Z,gravityMean)<br/></pre>
 
 ## Tidy Data
 
@@ -700,10 +700,10 @@ The variables in the tidy data set are summarized into the average of each input
 
 Below are the complete list of variables based on the information above:
 
-subject<br/>
-<pre> * the subject who performed the activity (30 volunteers).<br/>
+<pre>subject<br/>
+    * the subject who performed the activity (30 volunteers).<br/>
 activity.names<br/>
-<pre> * six activities performed (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING).<br/>
+    * six activities performed (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING).<br/>
 average.tBodyAcc.mean.X<br/>
 average.tBodyAcc.mean.Y<br/>
 average.tBodyAcc.mean.Z<br/>
@@ -769,4 +769,4 @@ average.fBodyGyro.std.Z<br/>
 average.fBodyAccMag.std<br/>
 average.fBodyBodyAccJerkMag.std<br/>
 average.fBodyBodyGyroMag.std<br/>
-average.fBodyBodyGyroJerkMag.std<br/>
+average.fBodyBodyGyroJerkMag.std<br/></pre>
